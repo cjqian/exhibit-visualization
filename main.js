@@ -113,7 +113,7 @@ function zoom(d, i) {
         var el = d3.select(this);
         var words = d.name.split(' ');
         
-        var charMax = d.r / 2.4;
+        var charMax = d.r / 2;
         var phrases = [];
         var wIdx = 0;
 
@@ -149,7 +149,7 @@ function zoom(d, i) {
     t.selectAll("text")
         .each(insertLineBreaks)
         .attr("x", function(d) { return x(d.x); })
-        .attr("y", function(d) { return y(d.y - (nPhrases * 2)); })
+        .attr("y", function(d) { return y(d.y - (nPhrases * 2.6)); })
         .style("opacity", function(d) { 
             if (d.depth == curDepth + 1 ||
                 (d.depth == 3 && curDepth == 3)){
